@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 //Components
 import EmployeeTracker from "./pages/EmployeeTracker";
@@ -13,11 +13,14 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
+import Spinner from "./components/Spinner";
 
 function App() {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const unsub = auth.onAuthStateChanged((authUser) => {
       authUser
         ? dispatch(
@@ -30,18 +33,24 @@ function App() {
             })
           )
         : dispatch(logout());
+      setLoading(false);
     });
+
     return unsub;
   }, [dispatch]);
 
   return (
     <div className='app'>
       <Router>
-        <Switch>
-          <PrivateRoute exact path='/' component={EmployeeTracker} />
-          <PublicRoute path='/login' component={LogInPage} />
-          <PublicRoute path='/signup' component={SignUpPage} />
-        </Switch>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <Switch>
+            <PrivateRoute exact path='/' component={EmployeeTracker} />
+            <PublicRoute path='/login' component={LogInPage} />
+            <PublicRoute path='/signup' component={SignUpPage} />
+          </Switch>
+        )}
       </Router>
     </div>
   );
