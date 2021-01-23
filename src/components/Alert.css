@@ -1,0 +1,31 @@
+.alert {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 5%;
+  bottom: 5%;
+  width: 16rem;
+  height: 2.5rem;
+  background-color: #009957;
+  z-index: 99999;
+}
+
+.alert-message {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  color: white;
+  height: 100%;
+}
+
+.progress {
+  margin-top: auto;
+  width: 100%;
+  height: 0.25rem;
+}
+
+.progress-line {
+  width: 100%;
+  height: 100%;
+  background-color: #707070;
+}

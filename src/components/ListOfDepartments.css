@@ -1,0 +1,16 @@
+.departments {
+  color: #1b1c1e;
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.departments-list {
+  margin-top: 0.5rem;
+  height: 19rem;
+  overflow-y: scroll;
+}
+
+.departments-list::-webkit-scrollbar {
+  display: none;
+}

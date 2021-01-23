@@ -1,0 +1,12 @@
+.list-of-employees-container {
+  background-color: white;
+  width: 50rem;
+  height: 25rem;
+  margin-bottom: 1rem;
+}
+
+.select-department-dropdown {
+  width: 100%;
+  height: 4rem;
+  margin-left: 0.5rem;
+}

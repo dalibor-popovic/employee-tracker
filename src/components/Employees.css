@@ -1,0 +1,13 @@
+.employees-container {
+  color: #1b1c1e;
+  margin-top: 4.5rem;
+  margin-left: auto;
+  width: calc(100% - 21rem);
+}
+
+.employees {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}

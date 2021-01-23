@@ -1,0 +1,20 @@
+.header {
+  height: 4.5rem;
+  position: fixed;
+  padding: 0rem 0rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d7def;
+  color: white;
+  z-index: 1000;
+}
+
+.logo {
+  margin-left: 1rem;
+}
+
+.logout-button {
+  margin-right: 1rem !important;
+}

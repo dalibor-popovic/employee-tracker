@@ -1,0 +1,11 @@
+.add-department-from {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-icon {
+  background-color: #1d7def !important;
+  color: white !important;
+}

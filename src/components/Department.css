@@ -1,0 +1,18 @@
+.department {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.department-settings-container {
+  display: "flex";
+}
+
+.department-settings {
+  display: flex;
+  border-radius: 5rem;
+  border: 1px solid #f5f5f5;
+  background-color: white;
+}

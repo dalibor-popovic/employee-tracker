@@ -1,0 +1,10 @@
+.chart-container {
+  background-color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  max-width: 50rem;
+  width: 50rem;
+}
