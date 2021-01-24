@@ -30,7 +30,8 @@ const ListOfEmployees = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    db.collection("Employees")
+    const unsub = db
+      .collection("Employees")
       .orderBy("createdAt", "asc")
       .onSnapshot((snapshot) => {
         let employeesData = [];
@@ -46,6 +47,8 @@ const ListOfEmployees = () => {
 
         dispatch(setEmployees(employeesData));
       });
+
+    return unsub;
   }, [dispatch]);
 
   const filteredEmployees = useSelector(selectFilteredEmployees);

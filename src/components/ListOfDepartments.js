@@ -14,7 +14,8 @@ const ListOfDepartments = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    db.collection("Departments")
+    const unsub = db
+      .collection("Departments")
       .orderBy("createdAt", "asc")
       .onSnapshot((snapshot) => {
         let departmentsData = [];
@@ -28,6 +29,8 @@ const ListOfDepartments = () => {
 
         dispatch(setDepartments(departmentsData));
       });
+
+    return unsub;
   }, [dispatch]);
 
   const departments = useSelector(selectDepartments);

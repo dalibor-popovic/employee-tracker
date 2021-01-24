@@ -39,18 +39,18 @@ function App() {
     return unsub;
   }, [dispatch]);
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <div className='app'>
       <Router>
-        {loading ? (
-          <Spinner />
-        ) : (
-          <Switch>
-            <PrivateRoute exact path='/' component={EmployeeTracker} />
-            <PublicRoute path='/login' component={LogInPage} />
-            <PublicRoute path='/signup' component={SignUpPage} />
-          </Switch>
-        )}
+        <Switch>
+          <PrivateRoute exact path='/' component={EmployeeTracker} />
+          <PublicRoute path='/login' component={LogInPage} />
+          <PublicRoute path='/signup' component={SignUpPage} />
+        </Switch>
       </Router>
     </div>
   );
